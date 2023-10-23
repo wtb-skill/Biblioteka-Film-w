@@ -57,7 +57,7 @@ class Library:
 
         :return: List of movies
         """
-        movies_list = [_entry for _entry in self.collection if isinstance(_entry, Movie)]
+        movies_list = [_entry for _entry in self.collection if type(_entry) == Movie]
         sorted_movies_list = sorted(movies_list, key=lambda _entry: _entry.title)
         return sorted_movies_list
 
@@ -67,7 +67,7 @@ class Library:
 
         :return: List of TV series
         """
-        series_list = [_entry for _entry in self.collection if isinstance(_entry, TvSeries)]
+        series_list = [_entry for _entry in self.collection if type(_entry) == TvSeries]
         sorted_series_list = sorted(series_list, key=lambda _entry: _entry.title)
         return sorted_series_list
 
@@ -170,3 +170,9 @@ if __name__ == "__main__":
     top_3 = biblioteka.top_titles(3)
     for entry in top_3:
         print(entry)
+
+    for entry in biblioteka.get_movies():
+        print(entry)
+    # for entry in biblioteka.get_series():
+    #     print(entry)
+
