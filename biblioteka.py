@@ -171,8 +171,5 @@ if __name__ == "__main__":
     for entry in top_3:
         print(entry)
 
-    for entry in biblioteka.get_movies():
-        print(entry)
-    # for entry in biblioteka.get_series():
-    #     print(entry)
+
 

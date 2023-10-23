@@ -42,9 +42,9 @@ class TvSeries(Movie):
 
     def __str__(self) -> str:
         """Return a formatted string representation of the tv series."""
-        if self.episode_nr < 10:
+        if int(self.episode_nr) < 10:
             self.episode_nr = '0' + str(self.episode_nr)
-        if self.season_nr < 10:
+        if int(self.season_nr) < 10:
             self.season_nr = '0' + str(self.season_nr)
         return f'{self.title} S{self.season_nr}E{self.episode_nr}'
 
